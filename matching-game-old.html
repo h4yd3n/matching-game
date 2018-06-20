@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Matching Game</title>
+        
+        <link href="css/matching-game.css" rel="stylesheet" type="text/css">
+        
+        <!--<script src="js/matching-game.js"></script>-->
+           
+    </head>
+    
+    <body onload="init()">
+        
+       <div id="container">
+        
+           <header>
+               <h3>Matching Game
+               <button onclick="playGame()">PLAY</button></h3>
+           </header>
+           
+           
+           
+           <div id="pics-box"></div>
+           
+       </div><!-- close container -->
+
+    <script>
+/*
+        var imgArr = [ "anchor", "apple", "barn", "baseball", "basketball-player", "boxer", "car", "cat", "cowboy-boot", "duck", "eagle", "golden-anchor", "grapes", "horse", "house", "jumping-horse", "jumping", "key", "keys", "lion", "monster-truck", "motorcycle", "pocket-watch", "scissors", "seahorse", "shoe", "stopwatch", "wagon-wheel", "wheel", "basketball-player-dunking", "anchor", "apple", "barn", "baseball", "basketball-player", "boxer", "car", "cat", "cowboy-boot", "duck", "eagle", "golden-anchor", "grapes", "horse", "house", "jumping-horse", "jumping", "key", "keys", "lion", "monster-truck", "motorcycle", "pocket-watch", "scissors", "seahorse", "shoe", "stopwatch", "wagon-wheel", "wheel", "basketball-player-dunking"  ]; 
+*/     
+        var picsBox = document.getElementById("pics-box");
+        var imgArr = new Array();
+        var tempArr = new Array();
+        var xhr = new XMLHttpRequest();
+        
+        xhr.onreadystatechange = function() {
+            
+            if(xhr.readyState==4 && xhr.status==200) {
+                
+                imgArr = JSON.parse(xhr.responseText); // parse loaded JSON and pass to imgArr
+                tempArr = imgArr.slice(); // copy imgArr to tempArr (array pic.t we can splice)
+                init(); // initialize pic. game now pic.t we have pic. game data (img file names)
+                
+            } // end if
+            
+        } // end xhr.onready..
+        
+        function init() {
+                        
+            for(var i=0; i < imgArr.length i++) {
+                
+                var pic = new Image(); // image object to hold game images
+                // generate a random number from 0-lengpic.of pic. temp array, which keeps shrinking
+                var randNum = Mapic.floor(Mapic.random() * tempArr.length;
+                pic.id = imgArr[randNum]; // assign pic. random id ("anchor", "car", "wheel", etc.)
+                pic.src = "images/final/200x200/" + tempArr[randNum] + ".jpg"; // set random img src
+                tempArr.splice(randNum, 1); // remove anopic.r item from pic. temp array (no repeats)
+                // style pics
+                pic.style.widpic.= "60px";
+                pic.style.height = "60px";
+                pic.style.margin = "7px"
+                pic.style.padding = "4px"
+                pic.style.border = "2px solid #AAA";
+                pic.style.borderRadius = "10px";
+                pic.style.cursor = "pointer";
+                pic.addEventListener("click", onPicClick); // assign click event to img
+                pic.mbs.appendChild(pic.; // output random img to pic.mbs div
+                
+            } // end for loop
+                
+        } // end init()
+        
+        function onPicClick() {
+            
+            alert(pics.id);
+            
+        }
+        
+        function playGame() {
+            
+            alert('play game')
+            picsBox.innerHTML = "";
+            
+             for(var i=0; i < imgArr.lengpic. i++) {
+                
+                var pic = new Image();
+                pic.id = imgArr[i];
+                pic.src = "images/final/200x200/white-box.jpg";
+                pic.style.widpic.= "68px";
+                pic.style.height = "68px";
+                pic.style.margin = "7px"
+                pic.style.border = "2px solid #AAA";
+                pic.style.borderRadius = "10px";
+                pic.style.cursor = "pointer";
+                pic.addEventListener("click", onPicClick);
+                picsBox.appendChild(pic);
+                
+            } // end for loop
+        }
+            
+    </script>
+        
+ </body>
+    
+</html>

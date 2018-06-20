@@ -1,0 +1,129 @@
+@charset = "UTF-8";
+
+body {
+    background-color: #555;
+    color: forestgreen;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+#container {
+    background-color: #922;
+    width: 1100px; /* relative to body */
+    margin: 0px auto; /* center container within body */
+    border: 4px solid beige;
+    border-radius: 40px;
+    height: 570px;
+    text-align: center;
+    padding: 15px; /* keep child elements from hitting edge of container */
+}
+
+table {
+    background-color: white;
+    width: 100%;
+    border-radius: 25px;
+    /* border: 3px solid forestgreen; */
+}
+
+th {
+    background-color: forestgreen;
+    color: bisque;
+}
+
+img {
+    width: 99px;
+    height: auto;
+}
+
+#bigPic {
+    background-color: white;
+    width: 15%; /* relative to body */
+    border: 5px solid tan;
+    border-radius: 20px;
+    padding: 10px; /* keep child elements from hitting edge of container */
+    float: right; /* want 2-column layout, so put bigPic on right side */
+    /* height: 480px;
+     set size, etc. of Eng and Pin text in bigPic div */
+    font-size: 2rem;
+    font-family: sans-serif;
+    text-align: center;
+}
+    
+#thumbs {
+    background-color: white;
+    width: 97%; /* relative to body */
+    border: 5px solid tan;
+    border-radius: 20px;
+    text-align: center; /* center the thumbs */
+    padding: 10px; /* keep child elements from hitting edge of container */
+    height: 460px;
+    /* deploy the janice-w-bunny pic as the bg image of the thumbs div */
+/*    background-image: url(../images/janice-w-bunny-600x261.png);*/
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+header {
+    height: 40px;
+    text-align: center;
+    color: whitesmoke;
+    font-family: sans-serif;
+}
+
+footer {
+    height: 30px;
+    clear: both; /* get footer clear of 2-col layout, above */
+    text-align: right; /* move Quiz Me button to right side */
+    padding-top: 10px;
+}
+
+h1 {
+    font-size: 2.5rem; /* 1rem = 16px, the default size */
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+button {
+    font-size: 1rem;
+    padding: 3px;
+    color: whitesmoke;
+    background-color: darkorchid;
+    border-radius: 10px;
+    width: 200px;
+    margin-left: 50px;
+}
+
+/* AP Div to hold Chinese character; positioned directly above speech balloon */
+#chinChar {
+    position: absolute; /* always the first property in AP */
+    width: 247px;
+    height: 158px;
+    left: 441px;
+    top: 470px;
+    background-color: white; /* white bg to hide the speech text */
+    text-align: center;
+    display: none; /* hide the opaque white chin char div on page load */
+    z-index: 1; /* usually the z-index appears last; this is the DEPTH */
+}
+
+#chinChar img { 
+    height: 100%; /* make Chin char img fill full height of div */
+    width: auto;
+}
+
+/* hide the RESTART button on initial pg load, since btn is only used during Quiz Mode */
+#restart {
+    display: none;
+}
+
+
+
+
+
+
+
+

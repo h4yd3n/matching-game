@@ -1,0 +1,1 @@
+[ "anchor", "apple", "barn", "baseball", "basketball-player", "boxer", "car", "cat", "cowboy-boot", "duck", "eagle", "golden-anchor", "grapes", "horse", "house", "jumping-horse", "jumping", "key", "keys", "lion", "monster-truck", "motorcycle", "pocket-watch", "scissors", "seahorse", "shoe", "stopwatch", "wagon-wheel", "wheel", "slamdunk" ]

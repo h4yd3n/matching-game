@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Matching Game 2</title>
+        <link href="css/matching-game.css" rel="stylesheet">           
+    </head>
+    
+    <body>
+        
+       <div id="container">
+        
+           <header>
+               
+               <span style="font-size:1.5rem; margin-right: 50px">Matching Game</span>
+               
+               <button onclick="playGame()">PLAY</button>
+               
+               <h2 style="margin-left:50px; font-size:1rem">&nbsp</h2>
+               
+               <div id="settings">
+                   
+                    <select name="num-items" id="num-items" 
+                            style="font-size:1.25rem; width:250px; margin-left: 20px">
+                        
+                        <option value="12">Novice (12 pairs)</option>
+                        <option value="18">Hobbyist (18 pairs)</option>
+                        <option value="25">Professional (25 pairs)</option>
+                        <option value="30">Ninja (30 pairs)</option>
+                        
+                   </select>
+                   
+               </div>
+               
+           </header>
+           
+           <div id="app"></div><!-- holds match game pieces -->
+           
+           <div style="padding: 15px; width:90%; margin: 0 auto">
+               
+               <footer>
+                   
+                   Attempts: &nbsp;  &nbsp;  &nbsp; 
+                   Matches: &nbsp;  &nbsp;  &nbsp;
+                   Average: &nbsp;  &nbsp;  &nbsp;
+                   
+               </footer>
+<!--
+                   <span style="letter-spacing:2px; float: left; font-size:14px">
+                   Score = Avg x Tot Pairs x Tot Pairs x Matches x 1000 / Seconds </span>
+-->
+                   <span id="clock" style="color:red; letter-spacing:3px; float:right 
+                   font-size:20px; margin-left:20px; display:inline">00:00</span>
+               
+            </div>
+
+       </div><!-- close container -->
+
+       <script src="js/Classes/MatchingGame2.js"></script>
+
+       <script>
+           
+           const arry = ["anchor", "apple", "barn", "baseball", "basketball-player", "boxer", "car", "cat", "cowboy-boot", "duck", "eagle", "golden-anchor", "grapes", "horse", "house", "jumping-horse", "jumping", "key", "keys", "lion", "monster-truck", "motorcycle", "pocket-watch", "scissors", "seahorse", "shoe", "stopwatch", "wagon-wheel", "wheel", "slamdunk"]
+           
+           // shuffle before choosing items to include, for variety each time
+           arry.sort((a, b) => {
+                return 0.5 - Math.random()
+           });
+
+           // a smaller array to use in the game, made from the 30 shuffled originals
+
+           function playGame() {
+                var numItems = document.getElementById('num-items').value // 12, 18, 25 or 30
+                numItems = Number(numItems)
+                const arr = arry.splice(0, numItems) // starting at index 0, return 12, 18, 25 or 30 items
+                const matchGame = new MatchingGame2('app', arr) 
+                matchGame.initGame()
+           }
+
+      </script>
+        
+ </body>
+    
+</html>

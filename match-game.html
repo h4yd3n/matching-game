@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Matching Game</title>
+        <link href="css/matching-game.css" rel="stylesheet">           
+    </head>
+    
+    <body>
+        
+       <div id="container">
+        
+           <header>
+               
+               <span style="font-size:1.5rem; margin-right: 50px">JS OOP Matching Game</span>
+               
+               <button onclick="playGame()">PLAY</button>
+               
+               <h2 style="margin-left:50px; font-size:1rem">&nbsp</h2>
+               
+           </header>
+           
+           <div id="app"></div><!-- holds match game pieces -->
+           
+           <footer>
+                Attempts: &nbsp;  &nbsp;  &nbsp; Matches: &nbsp;  &nbsp;  &nbsp;     Average: &nbsp;  &nbsp;  &nbsp; 
+           </footer>
+           
+       </div><!-- close container -->
+
+    <script src="js/Classes/MatchGame.js"></script>
+        
+    <script>
+        
+        const matchGame = new MatchGame('app') 
+        
+        function playGame() {
+            matchGame.initGame()
+        }
+        
+    </script>
+        
+ </body>
+    
+</html>
